@@ -1,24 +1,25 @@
 /* CSS cho trang dịch vụ - services.html */
+/* Thiết kế hiện đại và chuyên nghiệp */
 
 /* Import Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
 /* Reset CSS cơ bản */
 * {
-  margin: 0; /* Xóa margin mặc định của tất cả elements */
-  padding: 0; /* Xóa padding mặc định của tất cả elements */
+  margin: 0; /* Xóa margin mặc định */
+  padding: 0; /* Xóa padding mặc định */
   box-sizing: border-box; /* Tính toán kích thước bao gồm border và padding */
 }
 
 /* Thiết lập cơ bản cho body */
 body {
-  font-family: "Inter", sans-serif; /* Thiết lập font chữ chính cho toàn trang */
-  line-height: 1.6; /* Thiết lập khoảng cách giữa các dòng */
+  font-family: "Inter", sans-serif; /* Font chính cho toàn trang */
+  line-height: 1.6; /* Khoảng cách dòng */
   color: #333; /* Màu chữ chính */
-  background-color: #fff; /* Màu nền trắng */
+  background-color: #fff; /* Nền trắng */
 }
 
-/* Container chung cho tất cả sections */
+/* Container chung */
 .container {
   max-width: 1200px; /* Giới hạn độ rộng tối đa */
   margin: 0 auto; /* Căn giữa container */
@@ -33,7 +34,7 @@ body {
   top: 0; /* Vị trí từ đầu trang */
   left: 0; /* Vị trí từ bên trái */
   right: 0; /* Vị trí từ bên phải */
-  z-index: 1000; /* Đặt layer cao để hiển thị trên các elements khác */
+  z-index: 1000; /* Đặt layer cao */
 }
 
 /* Thiết lập cho navbar */
@@ -153,12 +154,28 @@ body {
   background: linear-gradient(135deg, #2c5530 0%, #1a3a1e 100%); /* Gradient xanh đậm */
   color: #fff; /* Màu chữ trắng */
   padding: 120px 0 80px; /* Khoảng cách trên dưới, tính cả navbar */
+  position: relative; /* Để thêm decoration */
+  overflow: hidden; /* Ẩn overflow */
+}
+
+/* Thêm decoration cho header */
+.page-header::before {
+  content: ""; /* Pseudo element */
+  position: absolute; /* Định vị tuyệt đối */
+  top: -50px; /* Vị trí trên */
+  right: -50px; /* Vị trí phải */
+  width: 200px; /* Chiều rộng */
+  height: 200px; /* Chiều cao */
+  background: rgba(255, 193, 7, 0.1); /* Màu vàng nhạt */
+  border-radius: 50%; /* Hình tròn */
 }
 
 .page-header-content {
   text-align: center; /* Căn giữa text */
   max-width: 800px; /* Giới hạn độ rộng */
   margin: 0 auto; /* Căn giữa */
+  position: relative; /* Để hiển thị trên decoration */
+  z-index: 2; /* Layer cao hơn */
 }
 
 .page-title {
@@ -175,60 +192,87 @@ body {
 
 /* Thiết lập cho services overview */
 .services-overview {
-  padding: 80px 0; /* Khoảng cách trên dưới */
-  background-color: #fff; /* Nền trắng */
+  padding: 100px 0; /* Tăng padding */
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); /* Gradient nền nhẹ */
 }
 
-/* Thiết lập cho services grid */
+/* Thiết lập cho services grid - Layout cải tiến */
 .services-grid {
-  display: flex; /* Sử dụng flexbox */
-  gap: 2rem; /* Khoảng cách giữa các cards */
-  flex-wrap: wrap; /* Cho phép xuống dòng */
-  justify-content: center; /* Căn giữa */
+  display: grid; /* Sử dụng CSS Grid */
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); /* Grid responsive */
+  gap: 2.5rem; /* Tăng khoảng cách */
+  justify-items: center; /* Căn giữa các items */
+  max-width: 1400px; /* Tăng max-width */
+  margin: 0 auto; /* Căn giữa */
 }
 
 .service-card {
-  flex: 1; /* Chiếm không gian đều nhau */
-  min-width: 350px; /* Chiều rộng tối thiểu */
-  max-width: 400px; /* Chiều rộng tối đa */
-  padding: 2.5rem 2rem; /* Khoảng cách trong */
-  border-radius: 15px; /* Bo góc */
+  width: 100%; /* Chiều rộng 100% */
+  max-width: 420px; /* Tăng max-width */
+  padding: 3rem 2.5rem; /* Tăng padding */
+  border-radius: 20px; /* Tăng bo góc */
   background: #fff; /* Nền trắng */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Bóng đổ */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08), 0 5px 15px rgba(0, 0, 0, 0.04); /* Bóng đổ mềm mại */
   text-align: center; /* Căn giữa text */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng chuyển động */
+  transition: all 0.4s ease; /* Hiệu ứng mượt mà hơn */
   border: 1px solid #f0f0f0; /* Viền mỏng */
+  position: relative; /* Để thêm decoration */
+  overflow: hidden; /* Ẩn overflow */
 }
 
 .service-card:hover {
-  transform: translateY(-10px); /* Di chuyển lên khi hover */
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* Tăng bóng đổ khi hover */
+  transform: translateY(-15px) scale(1.02); /* Tăng hiệu ứng hover */
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12), 0 10px 25px rgba(0, 0, 0, 0.08); /* Bóng đổ mạnh hơn */
+}
+
+/* Thêm decoration cho service card */
+.service-card::before {
+  content: ""; /* Pseudo element */
+  position: absolute; /* Định vị tuyệt đối */
+  top: 0; /* Vị trí trên */
+  left: 0; /* Vị trí trái */
+  right: 0; /* Vị trí phải */
+  height: 4px; /* Chiều cao */
+  background: linear-gradient(90deg, #ffc107, #ff8c00); /* Gradient ngang */
+  opacity: 0; /* Ẩn ban đầu */
+  transition: opacity 0.3s ease; /* Hiệu ứng */
+}
+
+.service-card:hover::before {
+  opacity: 1; /* Hiển thị khi hover */
 }
 
 .service-icon {
-  width: 80px; /* Chiều rộng */
-  height: 80px; /* Chiều cao */
-  background: linear-gradient(45deg, #ffc107, #ff8c00); /* Gradient vàng cam */
+  width: 90px; /* Tăng kích thước */
+  height: 90px; /* Tăng kích thước */
+  background: linear-gradient(135deg, #ffc107, #ff8c00); /* Gradient chéo */
   border-radius: 50%; /* Tạo hình tròn */
   display: flex; /* Sử dụng flexbox */
   align-items: center; /* Căn giữa theo chiều dọc */
   justify-content: center; /* Căn giữa theo chiều ngang */
-  margin: 0 auto 1.5rem; /* Căn giữa và khoảng cách dưới */
-  font-size: 2rem; /* Kích thước icon */
+  margin: 0 auto 2rem; /* Tăng margin dưới */
+  font-size: 2.2rem; /* Tăng kích thước icon */
   color: #fff; /* Màu trắng cho icon */
+  box-shadow: 0 8px 20px rgba(255, 193, 7, 0.3); /* Bóng đổ vàng */
+  transition: transform 0.3s ease; /* Hiệu ứng */
+}
+
+.service-card:hover .service-icon {
+  transform: rotate(10deg) scale(1.1); /* Tăng hiệu ứng xoay và scale */
 }
 
 .service-card h4 {
-  font-size: 1.5rem; /* Kích thước tiêu đề */
+  font-size: 1.6rem; /* Tăng kích thước tiêu đề */
   font-weight: 600; /* Độ đậm */
   color: #2c5530; /* Màu xanh */
-  margin-bottom: 1rem; /* Khoảng cách dưới */
+  margin-bottom: 1.2rem; /* Tăng khoảng cách dưới */
 }
 
 .service-card p {
   color: #666; /* Màu xám cho mô tả */
-  margin-bottom: 1.5rem; /* Khoảng cách dưới */
+  margin-bottom: 2rem; /* Tăng khoảng cách dưới */
   line-height: 1.7; /* Khoảng cách dòng */
+  font-size: 1.05rem; /* Tăng kích thước chữ */
 }
 
 .service-features {
@@ -238,10 +282,12 @@ body {
 }
 
 .service-features li {
-  padding: 0.5rem 0; /* Khoảng cách trên dưới */
+  padding: 0.7rem 0; /* Tăng khoảng cách trên dưới */
   color: #666; /* Màu xám */
   position: relative; /* Định vị tương đối */
-  padding-left: 1.5rem; /* Khoảng cách trái cho icon */
+  padding-left: 2rem; /* Tăng khoảng cách trái cho icon */
+  font-size: 1rem; /* Kích thước chữ */
+  transition: color 0.3s ease; /* Hiệu ứng màu */
 }
 
 .service-features li::before {
@@ -250,117 +296,145 @@ body {
   left: 0; /* Vị trí trái */
   color: #ffc107; /* Màu vàng cho icon */
   font-weight: bold; /* Độ đậm */
+  font-size: 1.2rem; /* Tăng kích thước icon */
+}
+
+.service-card:hover .service-features li {
+  color: #555; /* Màu đậm hơn khi hover card */
 }
 
 /* Thiết lập cho pricing section */
 .pricing-section {
-  background-color: #f8f9fa; /* Nền xám nhạt */
-  padding: 80px 0; /* Khoảng cách trên dưới */
+  background-color: #fff; /* Nền trắng */
+  padding: 100px 0; /* Tăng padding */
 }
 
 .section-header {
   text-align: center; /* Căn giữa text */
-  margin-bottom: 4rem; /* Khoảng cách dưới */
+  margin-bottom: 5rem; /* Tăng khoảng cách dưới */
 }
 
 .section-title {
-  font-size: 2.5rem; /* Kích thước chữ lớn */
+  font-size: 2.8rem; /* Tăng kích thước chữ */
   font-weight: 700; /* Độ đậm cao */
   color: #2c5530; /* Màu xanh đậm */
-  margin-bottom: 1rem; /* Khoảng cách dưới */
+  margin-bottom: 1.5rem; /* Tăng khoảng cách dưới */
+  position: relative; /* Để thêm decoration */
+}
+
+/* Thêm decoration cho section title */
+.section-title::after {
+  content: ""; /* Pseudo element */
+  position: absolute; /* Định vị tuyệt đối */
+  bottom: -15px; /* Vị trí dưới */
+  left: 50%; /* Vị trí giữa */
+  transform: translateX(-50%); /* Căn giữa */
+  width: 80px; /* Tăng chiều rộng */
+  height: 4px; /* Tăng chiều cao */
+  background: linear-gradient(90deg, #ffc107, #ff8c00); /* Gradient ngang */
+  border-radius: 2px; /* Bo góc */
 }
 
 .section-subtitle {
-  font-size: 1.1rem; /* Kích thước chữ vừa */
+  font-size: 1.2rem; /* Tăng kích thước chữ */
   color: #666; /* Màu xám */
-  max-width: 600px; /* Giới hạn độ rộng */
+  max-width: 700px; /* Tăng giới hạn độ rộng */
   margin: 0 auto; /* Căn giữa */
 }
 
 /* Thiết lập cho pricing grid */
 .pricing-grid {
   display: flex; /* Sử dụng flexbox */
-  gap: 2rem; /* Khoảng cách giữa các cards */
+  gap: 2.5rem; /* Tăng khoảng cách giữa các cards */
   flex-wrap: wrap; /* Cho phép xuống dòng */
   justify-content: center; /* Căn giữa */
+  max-width: 1200px; /* Giới hạn độ rộng */
+  margin: 0 auto; /* Căn giữa */
 }
 
 .pricing-card {
   flex: 1; /* Chiếm không gian đều nhau */
-  min-width: 300px; /* Chiều rộng tối thiểu */
-  max-width: 350px; /* Chiều rộng tối đa */
+  min-width: 320px; /* Tăng chiều rộng tối thiểu */
+  max-width: 380px; /* Tăng chiều rộng tối đa */
   background: #fff; /* Nền trắng */
-  border-radius: 15px; /* Bo góc */
-  padding: 2.5rem 2rem; /* Khoảng cách trong */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Bóng đổ */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng chuyển động */
+  border-radius: 20px; /* Tăng bo góc */
+  padding: 3rem 2.5rem; /* Tăng khoảng cách trong */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08), 0 5px 15px rgba(0, 0, 0, 0.04); /* Bóng đổ mềm mại */
+  transition: all 0.4s ease; /* Hiệu ứng mượt mà hơn */
   border: 1px solid #f0f0f0; /* Viền mỏng */
   position: relative; /* Định vị tương đối cho badge */
   display: flex; /* Sử dụng flexbox */
   flex-direction: column; /* Hướng dọc */
+  overflow: hidden; /* Ẩn overflow */
 }
 
 .pricing-card:hover {
-  transform: translateY(-10px); /* Di chuyển lên khi hover */
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* Tăng bóng đổ khi hover */
+  transform: translateY(-15px) scale(1.02); /* Tăng hiệu ứng hover */
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12), 0 10px 25px rgba(0, 0, 0, 0.08); /* Bóng đổ mạnh hơn */
 }
 
 .pricing-card.featured {
-  border: 2px solid #ffc107; /* Viền vàng cho gói nổi bật */
-  transform: scale(1.05); /* Phóng to nhẹ */
+  border: 3px solid #ffc107; /* Tăng độ dày viền */
+  transform: scale(1.08); /* Tăng scale */
+  background: linear-gradient(135deg, #fff 0%, #fffbf0 100%); /* Gradient nền nhẹ */
+}
+
+.pricing-card.featured:hover {
+  transform: translateY(-15px) scale(1.1); /* Tăng scale khi hover */
 }
 
 .featured-badge {
   position: absolute; /* Định vị tuyệt đối */
-  top: -15px; /* Vị trí trên */
+  top: -18px; /* Điều chỉnh vị trí */
   left: 50%; /* Vị trí giữa */
   transform: translateX(-50%); /* Căn giữa */
-  background: linear-gradient(45deg, #ffc107, #ff8c00); /* Gradient nền */
+  background: linear-gradient(135deg, #ffc107, #ff8c00); /* Gradient chéo */
   color: #fff; /* Màu chữ trắng */
-  padding: 0.5rem 1.5rem; /* Khoảng cách trong */
-  border-radius: 20px; /* Bo góc tròn */
-  font-size: 0.9rem; /* Kích thước chữ nhỏ */
+  padding: 0.7rem 2rem; /* Tăng khoảng cách trong */
+  border-radius: 25px; /* Tăng bo góc */
+  font-size: 0.95rem; /* Tăng kích thước chữ */
   font-weight: 600; /* Độ đậm */
+  box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4); /* Bóng đổ vàng */
 }
 
 .pricing-header {
   text-align: center; /* Căn giữa */
-  margin-bottom: 2rem; /* Khoảng cách dưới */
+  margin-bottom: 2.5rem; /* Tăng khoảng cách dưới */
 }
 
 .pricing-header h4 {
-  font-size: 1.5rem; /* Kích thước tiêu đề */
+  font-size: 1.6rem; /* Tăng kích thước tiêu đề */
   font-weight: 600; /* Độ đậm */
   color: #2c5530; /* Màu xanh */
-  margin-bottom: 1rem; /* Khoảng cách dưới */
+  margin-bottom: 1.2rem; /* Tăng khoảng cách dưới */
 }
 
 .price {
   display: flex; /* Sử dụng flexbox */
   align-items: baseline; /* Căn theo baseline */
   justify-content: center; /* Căn giữa */
-  gap: 0.25rem; /* Khoảng cách giữa các phần tử */
+  gap: 0.3rem; /* Tăng khoảng cách giữa các phần tử */
 }
 
 .currency {
-  font-size: 1.2rem; /* Kích thước ký hiệu tiền tệ */
+  font-size: 1.3rem; /* Tăng kích thước ký hiệu tiền tệ */
   color: #666; /* Màu xám */
 }
 
 .amount {
-  font-size: 3rem; /* Kích thước số tiền lớn */
+  font-size: 3.5rem; /* Tăng kích thước số tiền */
   font-weight: 700; /* Độ đậm cao */
   color: #2c5530; /* Màu xanh */
 }
 
 .period {
-  font-size: 1rem; /* Kích thước chu kỳ */
+  font-size: 1.1rem; /* Tăng kích thước chu kỳ */
   color: #666; /* Màu xám */
 }
 
 .pricing-features {
   flex-grow: 1; /* Mở rộng để chiếm không gian còn lại */
-  margin-bottom: 2rem; /* Khoảng cách dưới */
+  margin-bottom: 2.5rem; /* Tăng khoảng cách dưới */
 }
 
 .pricing-features ul {
@@ -369,16 +443,22 @@ body {
 }
 
 .pricing-features li {
-  padding: 0.75rem 0; /* Khoảng cách trên dưới */
+  padding: 0.8rem 0; /* Tăng khoảng cách trên dưới */
   color: #666; /* Màu xám */
   display: flex; /* Sử dụng flexbox */
   align-items: center; /* Căn giữa theo chiều dọc */
-  gap: 0.75rem; /* Khoảng cách giữa icon và text */
+  gap: 1rem; /* Tăng khoảng cách giữa icon và text */
+  font-size: 1.05rem; /* Tăng kích thước chữ */
+  transition: color 0.3s ease; /* Hiệu ứng màu */
+}
+
+.pricing-card:hover .pricing-features li {
+  color: #555; /* Màu đậm hơn khi hover */
 }
 
 .pricing-features .fas {
   color: #ffc107; /* Màu vàng cho icon check */
-  font-size: 0.9rem; /* Kích thước icon */
+  font-size: 1rem; /* Tăng kích thước icon */
 }
 
 .pricing-footer {
@@ -389,24 +469,40 @@ body {
 .cta-section {
   background: linear-gradient(135deg, #2c5530 0%, #1a3a1e 100%); /* Gradient xanh đậm */
   color: #fff; /* Màu chữ trắng */
-  padding: 80px 0; /* Khoảng cách trên dưới */
+  padding: 100px 0; /* Tăng khoảng cách trên dưới */
+  position: relative; /* Để thêm decoration */
+  overflow: hidden; /* Ẩn overflow */
+}
+
+/* Thêm decoration cho CTA */
+.cta-section::before {
+  content: ""; /* Pseudo element */
+  position: absolute; /* Định vị tuyệt đối */
+  top: -100px; /* Vị trí trên */
+  left: -100px; /* Vị trí trái */
+  width: 300px; /* Chiều rộng */
+  height: 300px; /* Chiều cao */
+  background: rgba(255, 193, 7, 0.1); /* Màu vàng nhạt */
+  border-radius: 50%; /* Hình tròn */
 }
 
 .cta-content {
   text-align: center; /* Căn giữa text */
   max-width: 800px; /* Giới hạn độ rộng */
   margin: 0 auto; /* Căn giữa */
+  position: relative; /* Để hiển thị trên decoration */
+  z-index: 2; /* Layer cao hơn */
 }
 
 .cta-title {
-  font-size: 2.5rem; /* Kích thước chữ lớn */
+  font-size: 2.8rem; /* Tăng kích thước chữ */
   font-weight: 700; /* Độ đậm cao */
-  margin-bottom: 1rem; /* Khoảng cách dưới */
+  margin-bottom: 1.5rem; /* Tăng khoảng cách dưới */
 }
 
 .cta-description {
-  font-size: 1.2rem; /* Kích thước chữ vừa */
-  margin-bottom: 2rem; /* Khoảng cách dưới */
+  font-size: 1.3rem; /* Tăng kích thước chữ */
+  margin-bottom: 2.5rem; /* Tăng khoảng cách dưới */
   opacity: 0.9; /* Độ trong suốt nhẹ */
 }
 
@@ -444,14 +540,18 @@ body {
   }
 
   .section-title {
-    font-size: 2rem; /* Giảm kích thước tiêu đề section */
+    font-size: 2.2rem; /* Giảm kích thước tiêu đề section */
   }
 
   .cta-title {
-    font-size: 2rem; /* Giảm kích thước tiêu đề CTA */
+    font-size: 2.2rem; /* Giảm kích thước tiêu đề CTA */
   }
 
-  .services-grid,
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Điều chỉnh grid */
+    gap: 2rem; /* Giảm gap */
+  }
+
   .pricing-grid {
     flex-direction: column; /* Sắp xếp theo chiều dọc */
     align-items: center; /* Căn giữa */
@@ -485,14 +585,19 @@ body {
     font-size: 1.8rem; /* Giảm kích thước tiêu đề CTA */
   }
 
+  .services-grid {
+    grid-template-columns: 1fr; /* Một cột trên mobile */
+    gap: 1.5rem; /* Giảm gap */
+  }
+
   .service-card,
   .pricing-card {
-    min-width: auto; /* Xóa min-width */
-    margin-bottom: 2rem; /* Thêm margin dưới */
+    max-width: none; /* Xóa max-width */
+    margin-bottom: 1.5rem; /* Thêm margin dưới */
   }
 
   .amount {
-    font-size: 2.5rem; /* Giảm kích thước số tiền trên mobile */
+    font-size: 2.8rem; /* Giảm kích thước số tiền trên mobile */
   }
 
   .footer-content {
@@ -514,11 +619,66 @@ body {
   .services-overview,
   .pricing-section,
   .cta-section {
-    padding: 60px 0; /* Giảm padding */
+    padding: 70px 0; /* Giảm padding */
   }
 
   .service-card,
   .pricing-card {
-    padding: 2rem 1.5rem; /* Giảm padding trong card */
+    padding: 2.5rem 2rem; /* Giảm padding trong card */
   }
+
+  .services-grid {
+    gap: 1rem; /* Giảm gap hơn nữa */
+  }
+}
+
+/* Thêm hiệu ứng loading cho service cards */
+.service-card {
+  opacity: 0; /* Bắt đầu trong suốt */
+  transform: translateY(30px); /* Bắt đầu từ dưới */
+  animation: slideInUp 0.6s ease-out forwards; /* Animation slide in */
+}
+
+@keyframes slideInUp {
+  to {
+    opacity: 1; /* Kết thúc hiển thị */
+    transform: translateY(0); /* Kết thúc ở vị trí ban đầu */
+  }
+}
+
+/* Delay animation cho từng card */
+.service-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.service-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.service-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.service-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.service-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.service-card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+/* Thêm hiệu ứng cho pricing cards */
+.pricing-card {
+  opacity: 0; /* Bắt đầu trong suốt */
+  transform: translateY(30px); /* Bắt đầu từ dưới */
+  animation: slideInUp 0.6s ease-out forwards; /* Animation slide in */
+}
+
+.pricing-card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.pricing-card:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.pricing-card:nth-child(3) {
+  animation-delay: 0.6s;
 }
