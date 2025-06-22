@@ -1,4 +1,4 @@
-/* CSS cho trang chủ - index.html */
+/* CSS cho trang giới thiệu - about.html */
 
 /* Import Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
@@ -135,154 +135,87 @@ body {
   transform: translateY(-2px); /* Di chuyển lên khi hover */
 }
 
-/* Button large size */
-.btn-large {
-  padding: 15px 30px; /* Khoảng cách trong lớn hơn */
-  font-size: 1.1rem; /* Kích thước chữ lớn hơn */
+/* Thiết lập cho page header */
+.page-header {
+  background: linear-gradient(135deg, #2c5530 0%, #1a3a1e 100%); /* Gradient xanh đậm */
+  color: #fff; /* Màu chữ trắng */
+  padding: 120px 0 80px; /* Khoảng cách trên dưới, tính cả navbar */
 }
 
-/* Thiết lập cho hero section */
-.hero-section {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); /* Gradient nền */
-  padding: 120px 0 80px; /* Khoảng cách trên dưới, tính cả header */
-  position: relative; /* Định vị tương đối để chứa decoration */
-  overflow: hidden; /* Ẩn phần decoration tràn ra ngoài */
+.page-header-content {
+  text-align: center; /* Căn giữa text */
+  max-width: 800px; /* Giới hạn độ rộng */
+  margin: 0 auto; /* Căn giữa */
 }
 
-.hero-content {
-  display: flex; /* Sử dụng flexbox để sắp xếp nội dung */
-  align-items: center; /* Căn giữa theo chiều dọc */
-  gap: 4rem; /* Khoảng cách giữa text và image */
-  min-height: 500px; /* Chiều cao tối thiểu */
-}
-
-/* Thiết lập cho hero text */
-.hero-text {
-  flex: 1; /* Chiếm 1 phần không gian */
-  max-width: 600px; /* Giới hạn độ rộng */
-}
-
-.hero-title {
-  font-size: 3.5rem; /* Kích thước chữ rất lớn */
+.page-title {
+  font-size: 3rem; /* Kích thước chữ lớn */
   font-weight: 700; /* Độ đậm cao */
-  line-height: 1.2; /* Khoảng cách dòng chặt */
-  margin-bottom: 1.5rem; /* Khoảng cách dưới */
-  color: #2c5530; /* Màu xanh đậm */
+  margin-bottom: 1rem; /* Khoảng cách dưới */
 }
 
-/* Highlight text trong title */
-.highlight {
-  background: linear-gradient(45deg, #ffc107, #ff8c00); /* Gradient vàng cam */
-  -webkit-background-clip: text; /* Clip background theo text cho Webkit */
-  -webkit-text-fill-color: transparent; /* Làm chữ trong suốt để hiện gradient */
-  background-clip: text; /* Clip background theo text */
-  display: inline-block; /* Hiển thị inline-block */
-}
-
-.hero-description {
+.page-subtitle {
   font-size: 1.2rem; /* Kích thước chữ vừa */
-  color: #666; /* Màu xám */
-  margin-bottom: 2rem; /* Khoảng cách dưới */
-  line-height: 1.7; /* Khoảng cách dòng rộng */
+  opacity: 0.9; /* Độ trong suốt nhẹ */
+  line-height: 1.7; /* Khoảng cách dòng */
 }
 
-/* Thiết lập cho hero buttons */
-.hero-buttons {
-  display: flex; /* Sử dụng flexbox để sắp xếp buttons */
-  gap: 1.5rem; /* Khoảng cách giữa các buttons */
-  flex-wrap: wrap; /* Cho phép xuống dòng trên mobile */
-}
-
-/* Thiết lập cho hero image */
-.hero-image {
-  flex: 1; /* Chiếm 1 phần không gian */
-  display: flex; /* Sử dụng flexbox */
-  justify-content: center; /* Căn giữa theo chiều ngang */
-  align-items: center; /* Căn giữa theo chiều dọc */
-}
-
-.image-container {
-  position: relative; /* Định vị tương đối */
-  max-width: 400px; /* Giới hạn độ rộng */
-  width: 100%; /* Chiều rộng 100% */
-}
-
-.image-container::before {
-  content: ""; /* Tạo pseudo element */
-  position: absolute; /* Định vị tuyệt đối */
-  top: -20px; /* Vị trí trên */
-  left: -20px; /* Vị trí trái */
-  right: 20px; /* Vị trí phải */
-  bottom: 20px; /* Vị trí dưới */
-  background: linear-gradient(45deg, #ffc107, #ff8c00); /* Gradient nền */
-  border-radius: 20px; /* Bo góc */
-  z-index: -1; /* Đặt phía sau ảnh */
-}
-
-.image-container img {
-  width: 100%; /* Chiều rộng 100% */
-  height: auto; /* Chiều cao tự động */
-  border-radius: 15px; /* Bo góc cho ảnh */
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); /* Tạo bóng đổ */
-}
-
-/* Thiết lập decoration elements */
-.hero-decoration {
-  position: absolute; /* Định vị tuyệt đối */
-  top: 0; /* Vị trí trên cùng */
-  left: 0; /* Vị trí trái cùng */
-  width: 100%; /* Chiều rộng 100% */
-  height: 100%; /* Chiều cao 100% */
-  pointer-events: none; /* Không tương tác được */
-  z-index: 0; /* Đặt phía sau nội dung */
-}
-
-.decoration {
-  position: absolute; /* Định vị tuyệt đối */
-  border-radius: 50%; /* Tạo hình tròn */
-  opacity: 0.1; /* Độ trong suốt */
-}
-
-.decoration-1 {
-  width: 200px; /* Chiều rộng */
-  height: 200px; /* Chiều cao */
-  background: #ffc107; /* Màu vàng */
-  top: 10%; /* Vị trí từ trên */
-  right: 10%; /* Vị trí từ phải */
-}
-
-.decoration-2 {
-  width: 150px; /* Chiều rộng */
-  height: 150px; /* Chi���u cao */
-  background: #2c5530; /* Màu xanh */
-  bottom: 20%; /* Vị trí từ dưới */
-  left: 5%; /* Vị trí từ trái */
-}
-
-.decoration-3 {
-  width: 100px; /* Chiều rộng */
-  height: 100px; /* Chiều cao */
-  background: #ff8c00; /* Màu cam */
-  top: 60%; /* Vị trí từ trên */
-  right: 30%; /* Vị trí từ phải */
-}
-
-/* Thiết lập cho features section */
-.features-section {
+/* Thiết lập cho about content */
+.about-content {
   padding: 80px 0; /* Khoảng cách trên dưới */
   background-color: #fff; /* Nền trắng */
 }
 
-.section-header {
-  text-align: center; /* Căn giữa text */
-  margin-bottom: 4rem; /* Khoảng cách dưới */
+.about-story {
+  display: flex; /* Sử dụng flexbox để sắp xếp nội dung */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  gap: 4rem; /* Khoảng cách giữa text và image */
+}
+
+/* Thiết lập cho story text */
+.story-text {
+  flex: 1; /* Chiếm 1 phần không gian */
 }
 
 .section-title {
   font-size: 2.5rem; /* Kích thước chữ lớn */
   font-weight: 700; /* Độ đậm cao */
   color: #2c5530; /* Màu xanh đậm */
-  margin-bottom: 1rem; /* Khoảng cách dưới */
+  margin-bottom: 1.5rem; /* Khoảng cách dưới */
+}
+
+.section-description {
+  font-size: 1.1rem; /* Kích thước chữ vừa */
+  color: #666; /* Màu xám */
+  margin-bottom: 1.5rem; /* Khoảng cách dưới */
+  line-height: 1.8; /* Khoảng cách dòng rộng */
+}
+
+/* Thiết lập cho story image */
+.story-image {
+  flex: 1; /* Chiếm 1 phần không gian */
+  display: flex; /* Sử dụng flexbox */
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+.story-image img {
+  width: 100%; /* Chiều rộng 100% */
+  max-width: 500px; /* Giới hạn độ rộng tối đa */
+  height: auto; /* Chiều cao tự động */
+  border-radius: 15px; /* Bo góc cho ảnh */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); /* Tạo bóng đổ */
+}
+
+/* Thiết lập cho MVV section */
+.mvv-section {
+  background-color: #f8f9fa; /* Nền xám nhạt */
+  padding: 80px 0; /* Khoảng cách trên dưới */
+}
+
+.section-header {
+  text-align: center; /* Căn giữa text */
+  margin-bottom: 4rem; /* Khoảng cách dưới */
 }
 
 .section-subtitle {
@@ -292,15 +225,15 @@ body {
   margin: 0 auto; /* Căn giữa */
 }
 
-/* Thiết lập cho features grid */
-.features-grid {
+/* Thiết lập cho MVV grid */
+.mvv-grid {
   display: flex; /* Sử dụng flexbox */
   gap: 2rem; /* Khoảng cách giữa các cards */
   flex-wrap: wrap; /* Cho phép xuống dòng */
   justify-content: center; /* Căn giữa */
 }
 
-.feature-card {
+.mvv-card {
   flex: 1; /* Chiếm không gian đều nhau */
   min-width: 300px; /* Chiều rộng tối thiểu */
   max-width: 350px; /* Chiều rộng tối đa */
@@ -313,15 +246,15 @@ body {
   border: 1px solid #f0f0f0; /* Viền mỏng */
 }
 
-.feature-card:hover {
+.mvv-card:hover {
   transform: translateY(-10px); /* Di chuyển lên khi hover */
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* Tăng bóng đổ khi hover */
 }
 
-.feature-icon {
+.mvv-icon {
   width: 80px; /* Chiều rộng */
   height: 80px; /* Chiều cao */
-  background: linear-gradient(45deg, #ffc107, #ff8c00); /* Gradient nền */
+  background: linear-gradient(45deg, #ffc107, #ff8c00); /* Gradient vàng cam */
   border-radius: 50%; /* Tạo hình tròn */
   display: flex; /* Sử dụng flexbox */
   align-items: center; /* Căn giữa theo chiều dọc */
@@ -331,41 +264,130 @@ body {
   color: #fff; /* Màu trắng cho icon */
 }
 
-.feature-card h4 {
+.mvv-card h4 {
   font-size: 1.5rem; /* Kích thước tiêu đề */
   font-weight: 600; /* Độ đậm */
   color: #2c5530; /* Màu xanh */
   margin-bottom: 1rem; /* Khoảng cách dưới */
 }
 
-.feature-card p {
+.mvv-card p {
   color: #666; /* Màu xám cho text */
   line-height: 1.7; /* Khoảng cách dòng */
 }
 
-/* Thiết lập cho CTA section */
-.cta-section {
+/* Thiết lập cho team section */
+.team-section {
+  background-color: #fff; /* Nền trắng */
+  padding: 80px 0; /* Khoảng cách trên dưới */
+}
+
+/* Thiết lập cho team grid */
+.team-grid {
+  display: flex; /* Sử dụng flexbox */
+  gap: 2rem; /* Khoảng cách giữa các cards */
+  flex-wrap: wrap; /* Cho phép xuống dòng */
+  justify-content: center; /* Căn giữa */
+}
+
+.team-card {
+  flex: 1; /* Chiếm không gian đều nhau */
+  min-width: 250px; /* Chiều rộng tối thiểu */
+  max-width: 280px; /* Chiều rộng tối đa */
+  background: #fff; /* Nền trắng */
+  border-radius: 15px; /* Bo góc */
+  padding: 2rem; /* Khoảng cách trong */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Bóng đổ */
+  text-align: center; /* Căn giữa text */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng chuyển động */
+  border: 1px solid #f0f0f0; /* Viền mỏng */
+}
+
+.team-card:hover {
+  transform: translateY(-10px); /* Di chuyển lên khi hover */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* Tăng bóng đổ khi hover */
+}
+
+.team-image {
+  margin-bottom: 1.5rem; /* Khoảng cách dưới */
+}
+
+.team-image img {
+  width: 120px; /* Chiều rộng cố định */
+  height: 120px; /* Chiều cao cố định */
+  border-radius: 50%; /* Tạo hình tròn */
+  object-fit: cover; /* Cắt ảnh vừa khung */
+  border: 4px solid #f8f9fa; /* Viền xám nhạt */
+}
+
+.team-info h5 {
+  font-size: 1.3rem; /* Kích thước tên */
+  font-weight: 600; /* Độ đậm */
+  color: #2c5530; /* Màu xanh */
+  margin-bottom: 0.5rem; /* Khoảng cách dưới */
+}
+
+.team-position {
+  color: #666; /* Màu xám cho chức vụ */
+  font-size: 0.95rem; /* Kích thước chữ nhỏ */
+  margin-bottom: 1rem; /* Khoảng cách dưới */
+}
+
+.team-social {
+  display: flex; /* Sử dụng flexbox */
+  justify-content: center; /* Căn giữa */
+  gap: 1rem; /* Khoảng cách giữa các icon */
+}
+
+.team-social a {
+  width: 40px; /* Chiều rộng */
+  height: 40px; /* Chiều cao */
+  background: linear-gradient(45deg, #ffc107, #ff8c00); /* Gradient nền */
+  border-radius: 50%; /* Tạo hình tròn */
+  display: flex; /* Sử dụng flexbox */
+  align-items: center; /* Căn giữ theo chiều dọc */
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  color: #fff; /* Màu trắng cho icon */
+  text-decoration: none; /* Xóa gạch chân */
+  transition: transform 0.3s ease; /* Hiệu ứng chuyển động */
+}
+
+.team-social a:hover {
+  transform: scale(1.1); /* Phóng to khi hover */
+}
+
+/* Thiết lập cho stats section */
+.stats-section {
   background: linear-gradient(135deg, #2c5530 0%, #1a3a1e 100%); /* Gradient xanh đậm */
   color: #fff; /* Màu chữ trắng */
   padding: 80px 0; /* Khoảng cách trên dưới */
 }
 
-.cta-content {
+.stats-grid {
+  display: flex; /* Sử dụng flexbox */
+  gap: 2rem; /* Khoảng cách giữa các items */
+  flex-wrap: wrap; /* Cho phép xuống dòng */
+  justify-content: center; /* Căn giữa */
+}
+
+.stat-item {
+  flex: 1; /* Chiếm không gian đều nhau */
+  min-width: 200px; /* Chiều rộng tối thiểu */
   text-align: center; /* Căn giữa text */
-  max-width: 800px; /* Giới hạn độ rộng */
-  margin: 0 auto; /* Căn giữa */
+  padding: 2rem 1rem; /* Khoảng cách trong */
 }
 
-.cta-title {
-  font-size: 2.5rem; /* Kích thước chữ lớn */
+.stat-number {
+  font-size: 3rem; /* Kích thước số lớn */
   font-weight: 700; /* Độ đậm cao */
-  margin-bottom: 1rem; /* Khoảng cách dưới */
+  color: #ffc107; /* Màu vàng cho số */
+  margin-bottom: 0.5rem; /* Khoảng cách dưới */
 }
 
-.cta-description {
-  font-size: 1.2rem; /* Kích thước chữ vừa */
-  margin-bottom: 2rem; /* Khoảng cách dưới */
+.stat-label {
+  font-size: 1.1rem; /* Kích thước chữ vừa */
   opacity: 0.9; /* Độ trong suốt nhẹ */
+  font-weight: 500; /* Độ đậm trung bình */
 }
 
 /* Thiết lập cho footer */
@@ -397,19 +419,29 @@ body {
 
 /* Responsive design cho tablet */
 @media (max-width: 992px) {
-  .hero-content {
+  .about-story {
     flex-direction: column; /* Sắp xếp theo chiều dọc */
     text-align: center; /* Căn giữa text */
     gap: 3rem; /* Giảm khoảng cách */
   }
 
-  .hero-title {
-    font-size: 3rem; /* Giảm kích thước chữ */
+  .page-title {
+    font-size: 2.5rem; /* Giảm kích thước chữ */
   }
 
-  .features-grid {
+  .section-title {
+    font-size: 2rem; /* Giảm kích thước tiêu đề section */
+  }
+
+  .mvv-grid,
+  .team-grid {
     flex-direction: column; /* Sắp xếp theo chiều dọc */
     align-items: center; /* Căn giữa */
+  }
+
+  .stats-grid {
+    flex-direction: column; /* Sắp xếp theo chiều dọc */
+    gap: 1rem; /* Giảm khoảng cách */
   }
 }
 
@@ -424,32 +456,22 @@ body {
     display: flex; /* Hiển thị toggle button */
   }
 
-  .hero-title {
-    font-size: 2.5rem; /* Giảm kích thước chữ trên mobile */
-  }
-
-  .hero-description {
-    font-size: 1rem; /* Giảm kích thước mô tả */
+  .page-title {
+    font-size: 2rem; /* Giảm kích thước chữ trên mobile */
   }
 
   .section-title {
-    font-size: 2rem; /* Giảm kích thước tiêu đề section */
+    font-size: 1.8rem; /* Giảm kích thước tiêu đề section */
   }
 
-  .cta-title {
-    font-size: 2rem; /* Giảm kích thước tiêu đề CTA */
+  .mvv-card,
+  .team-card {
+    min-width: auto; /* Xóa min-width */
+    margin-bottom: 2rem; /* Thêm margin dưới */
   }
 
-  .hero-buttons {
-    justify-content: center; /* Căn giữa buttons */
-    flex-direction: column; /* Sắp xếp theo chiều dọc */
-    align-items: center; /* Căn giữa */
-  }
-
-  .btn {
-    width: 100%; /* Chiều rộng 100% trên mobile */
-    max-width: 300px; /* Giới hạn độ rộng tối đa */
-    justify-content: center; /* Căn giữa nội dung button */
+  .stat-number {
+    font-size: 2.5rem; /* Giảm kích thước số trên mobile */
   }
 
   .footer-content {
@@ -464,17 +486,19 @@ body {
     padding: 0 15px; /* Giảm padding */
   }
 
-  .hero-section {
+  .page-header {
     padding: 100px 0 60px; /* Giảm padding */
   }
 
-  .features-section,
-  .cta-section {
+  .about-content,
+  .mvv-section,
+  .team-section,
+  .stats-section {
     padding: 60px 0; /* Giảm padding */
   }
 
-  .feature-card {
-    min-width: auto; /* Xóa min-width */
-    margin-bottom: 2rem; /* Thêm margin dưới */
+  .mvv-card,
+  .team-card {
+    padding: 2rem 1.5rem; /* Giảm padding trong card */
   }
 }

@@ -1,4 +1,4 @@
-/* CSS cho trang chủ - index.html */
+/* CSS cho trang dịch vụ - services.html */
 
 /* Import Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
@@ -109,6 +109,8 @@ body {
   transition: all 0.3s ease; /* Hiệu ứng chuyển động */
   border: none; /* Xóa viền mặc định */
   cursor: pointer; /* Con trỏ chuột dạng pointer */
+  text-align: center; /* Căn giữa text */
+  justify-content: center; /* Căn giữa nội dung */
 }
 
 /* Button primary style */
@@ -141,136 +143,119 @@ body {
   font-size: 1.1rem; /* Kích thước chữ lớn hơn */
 }
 
-/* Thiết lập cho hero section */
-.hero-section {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); /* Gradient nền */
-  padding: 120px 0 80px; /* Khoảng cách trên dưới, tính cả header */
-  position: relative; /* Định vị tương đối để chứa decoration */
-  overflow: hidden; /* Ẩn phần decoration tràn ra ngoài */
+/* Button full width */
+.btn-full {
+  width: 100%; /* Chiều rộng 100% */
 }
 
-.hero-content {
-  display: flex; /* Sử dụng flexbox để sắp xếp nội dung */
-  align-items: center; /* Căn giữa theo chiều dọc */
-  gap: 4rem; /* Khoảng cách giữa text và image */
-  min-height: 500px; /* Chiều cao tối thiểu */
+/* Thiết lập cho page header */
+.page-header {
+  background: linear-gradient(135deg, #2c5530 0%, #1a3a1e 100%); /* Gradient xanh đậm */
+  color: #fff; /* Màu chữ trắng */
+  padding: 120px 0 80px; /* Khoảng cách trên dưới, tính cả navbar */
 }
 
-/* Thiết lập cho hero text */
-.hero-text {
-  flex: 1; /* Chiếm 1 phần không gian */
-  max-width: 600px; /* Giới hạn độ rộng */
+.page-header-content {
+  text-align: center; /* Căn giữa text */
+  max-width: 800px; /* Giới hạn độ rộng */
+  margin: 0 auto; /* Căn giữa */
 }
 
-.hero-title {
-  font-size: 3.5rem; /* Kích thước chữ rất lớn */
+.page-title {
+  font-size: 3rem; /* Kích thước chữ lớn */
   font-weight: 700; /* Độ đậm cao */
-  line-height: 1.2; /* Khoảng cách dòng chặt */
-  margin-bottom: 1.5rem; /* Khoảng cách dưới */
-  color: #2c5530; /* Màu xanh đậm */
+  margin-bottom: 1rem; /* Khoảng cách dưới */
 }
 
-/* Highlight text trong title */
-.highlight {
-  background: linear-gradient(45deg, #ffc107, #ff8c00); /* Gradient vàng cam */
-  -webkit-background-clip: text; /* Clip background theo text cho Webkit */
-  -webkit-text-fill-color: transparent; /* Làm chữ trong suốt để hiện gradient */
-  background-clip: text; /* Clip background theo text */
-  display: inline-block; /* Hiển thị inline-block */
-}
-
-.hero-description {
+.page-subtitle {
   font-size: 1.2rem; /* Kích thước chữ vừa */
-  color: #666; /* Màu xám */
-  margin-bottom: 2rem; /* Khoảng cách dưới */
-  line-height: 1.7; /* Khoảng cách dòng rộng */
+  opacity: 0.9; /* Độ trong suốt nhẹ */
+  line-height: 1.7; /* Khoảng cách dòng */
 }
 
-/* Thiết lập cho hero buttons */
-.hero-buttons {
-  display: flex; /* Sử dụng flexbox để sắp xếp buttons */
-  gap: 1.5rem; /* Khoảng cách giữa các buttons */
-  flex-wrap: wrap; /* Cho phép xuống dòng trên mobile */
-}
-
-/* Thiết lập cho hero image */
-.hero-image {
-  flex: 1; /* Chiếm 1 phần không gian */
-  display: flex; /* Sử dụng flexbox */
-  justify-content: center; /* Căn giữa theo chiều ngang */
-  align-items: center; /* Căn giữa theo chiều dọc */
-}
-
-.image-container {
-  position: relative; /* Định vị tương đối */
-  max-width: 400px; /* Giới hạn độ rộng */
-  width: 100%; /* Chiều rộng 100% */
-}
-
-.image-container::before {
-  content: ""; /* Tạo pseudo element */
-  position: absolute; /* Định vị tuyệt đối */
-  top: -20px; /* Vị trí trên */
-  left: -20px; /* Vị trí trái */
-  right: 20px; /* Vị trí phải */
-  bottom: 20px; /* Vị trí dưới */
-  background: linear-gradient(45deg, #ffc107, #ff8c00); /* Gradient nền */
-  border-radius: 20px; /* Bo góc */
-  z-index: -1; /* Đặt phía sau ảnh */
-}
-
-.image-container img {
-  width: 100%; /* Chiều rộng 100% */
-  height: auto; /* Chiều cao tự động */
-  border-radius: 15px; /* Bo góc cho ảnh */
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); /* Tạo bóng đổ */
-}
-
-/* Thiết lập decoration elements */
-.hero-decoration {
-  position: absolute; /* Định vị tuyệt đối */
-  top: 0; /* Vị trí trên cùng */
-  left: 0; /* Vị trí trái cùng */
-  width: 100%; /* Chiều rộng 100% */
-  height: 100%; /* Chiều cao 100% */
-  pointer-events: none; /* Không tương tác được */
-  z-index: 0; /* Đặt phía sau nội dung */
-}
-
-.decoration {
-  position: absolute; /* Định vị tuyệt đối */
-  border-radius: 50%; /* Tạo hình tròn */
-  opacity: 0.1; /* Độ trong suốt */
-}
-
-.decoration-1 {
-  width: 200px; /* Chiều rộng */
-  height: 200px; /* Chiều cao */
-  background: #ffc107; /* Màu vàng */
-  top: 10%; /* Vị trí từ trên */
-  right: 10%; /* Vị trí từ phải */
-}
-
-.decoration-2 {
-  width: 150px; /* Chiều rộng */
-  height: 150px; /* Chi���u cao */
-  background: #2c5530; /* Màu xanh */
-  bottom: 20%; /* Vị trí từ dưới */
-  left: 5%; /* Vị trí từ trái */
-}
-
-.decoration-3 {
-  width: 100px; /* Chiều rộng */
-  height: 100px; /* Chiều cao */
-  background: #ff8c00; /* Màu cam */
-  top: 60%; /* Vị trí từ trên */
-  right: 30%; /* Vị trí từ phải */
-}
-
-/* Thiết lập cho features section */
-.features-section {
+/* Thiết lập cho services overview */
+.services-overview {
   padding: 80px 0; /* Khoảng cách trên dưới */
   background-color: #fff; /* Nền trắng */
+}
+
+/* Thiết lập cho services grid */
+.services-grid {
+  display: flex; /* Sử dụng flexbox */
+  gap: 2rem; /* Khoảng cách giữa các cards */
+  flex-wrap: wrap; /* Cho phép xuống dòng */
+  justify-content: center; /* Căn giữa */
+}
+
+.service-card {
+  flex: 1; /* Chiếm không gian đều nhau */
+  min-width: 350px; /* Chiều rộng tối thiểu */
+  max-width: 400px; /* Chiều rộng tối đa */
+  padding: 2.5rem 2rem; /* Khoảng cách trong */
+  border-radius: 15px; /* Bo góc */
+  background: #fff; /* Nền trắng */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Bóng đổ */
+  text-align: center; /* Căn giữa text */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng chuyển động */
+  border: 1px solid #f0f0f0; /* Viền mỏng */
+}
+
+.service-card:hover {
+  transform: translateY(-10px); /* Di chuyển lên khi hover */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* Tăng bóng đổ khi hover */
+}
+
+.service-icon {
+  width: 80px; /* Chiều rộng */
+  height: 80px; /* Chiều cao */
+  background: linear-gradient(45deg, #ffc107, #ff8c00); /* Gradient vàng cam */
+  border-radius: 50%; /* Tạo hình tròn */
+  display: flex; /* Sử dụng flexbox */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  margin: 0 auto 1.5rem; /* Căn giữa và khoảng cách dưới */
+  font-size: 2rem; /* Kích thước icon */
+  color: #fff; /* Màu trắng cho icon */
+}
+
+.service-card h4 {
+  font-size: 1.5rem; /* Kích thước tiêu đề */
+  font-weight: 600; /* Độ đậm */
+  color: #2c5530; /* Màu xanh */
+  margin-bottom: 1rem; /* Khoảng cách dưới */
+}
+
+.service-card p {
+  color: #666; /* Màu xám cho mô tả */
+  margin-bottom: 1.5rem; /* Khoảng cách dưới */
+  line-height: 1.7; /* Khoảng cách dòng */
+}
+
+.service-features {
+  list-style: none; /* Xóa bullet points */
+  padding: 0; /* Xóa padding */
+  text-align: left; /* Căn trái cho danh sách */
+}
+
+.service-features li {
+  padding: 0.5rem 0; /* Khoảng cách trên dưới */
+  color: #666; /* Màu xám */
+  position: relative; /* Định vị tương đối */
+  padding-left: 1.5rem; /* Khoảng cách trái cho icon */
+}
+
+.service-features li::before {
+  content: "✓"; /* Icon check */
+  position: absolute; /* Định vị tuyệt đối */
+  left: 0; /* Vị trí trái */
+  color: #ffc107; /* Màu vàng cho icon */
+  font-weight: bold; /* Độ đậm */
+}
+
+/* Thiết lập cho pricing section */
+.pricing-section {
+  background-color: #f8f9fa; /* Nền xám nhạt */
+  padding: 80px 0; /* Khoảng cách trên dưới */
 }
 
 .section-header {
@@ -292,55 +277,112 @@ body {
   margin: 0 auto; /* Căn giữa */
 }
 
-/* Thiết lập cho features grid */
-.features-grid {
+/* Thiết lập cho pricing grid */
+.pricing-grid {
   display: flex; /* Sử dụng flexbox */
   gap: 2rem; /* Khoảng cách giữa các cards */
   flex-wrap: wrap; /* Cho phép xuống dòng */
   justify-content: center; /* Căn giữa */
 }
 
-.feature-card {
+.pricing-card {
   flex: 1; /* Chiếm không gian đều nhau */
   min-width: 300px; /* Chiều rộng tối thiểu */
   max-width: 350px; /* Chiều rộng tối đa */
-  padding: 2.5rem 2rem; /* Khoảng cách trong */
-  border-radius: 15px; /* Bo góc */
   background: #fff; /* Nền trắng */
+  border-radius: 15px; /* Bo góc */
+  padding: 2.5rem 2rem; /* Khoảng cách trong */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Bóng đổ */
-  text-align: center; /* Căn giữa text */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng chuyển động */
   border: 1px solid #f0f0f0; /* Viền mỏng */
+  position: relative; /* Định vị tương đối cho badge */
+  display: flex; /* Sử dụng flexbox */
+  flex-direction: column; /* Hướng dọc */
 }
 
-.feature-card:hover {
+.pricing-card:hover {
   transform: translateY(-10px); /* Di chuyển lên khi hover */
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* Tăng bóng đổ khi hover */
 }
 
-.feature-icon {
-  width: 80px; /* Chiều rộng */
-  height: 80px; /* Chiều cao */
-  background: linear-gradient(45deg, #ffc107, #ff8c00); /* Gradient nền */
-  border-radius: 50%; /* Tạo hình tròn */
-  display: flex; /* Sử dụng flexbox */
-  align-items: center; /* Căn giữa theo chiều dọc */
-  justify-content: center; /* Căn giữa theo chiều ngang */
-  margin: 0 auto 1.5rem; /* Căn giữa và khoảng cách dưới */
-  font-size: 2rem; /* Kích thước icon */
-  color: #fff; /* Màu trắng cho icon */
+.pricing-card.featured {
+  border: 2px solid #ffc107; /* Viền vàng cho gói nổi bật */
+  transform: scale(1.05); /* Phóng to nhẹ */
 }
 
-.feature-card h4 {
+.featured-badge {
+  position: absolute; /* Định vị tuyệt đối */
+  top: -15px; /* Vị trí trên */
+  left: 50%; /* Vị trí giữa */
+  transform: translateX(-50%); /* Căn giữa */
+  background: linear-gradient(45deg, #ffc107, #ff8c00); /* Gradient nền */
+  color: #fff; /* Màu chữ trắng */
+  padding: 0.5rem 1.5rem; /* Khoảng cách trong */
+  border-radius: 20px; /* Bo góc tròn */
+  font-size: 0.9rem; /* Kích thước chữ nhỏ */
+  font-weight: 600; /* Độ đậm */
+}
+
+.pricing-header {
+  text-align: center; /* Căn giữa */
+  margin-bottom: 2rem; /* Khoảng cách dưới */
+}
+
+.pricing-header h4 {
   font-size: 1.5rem; /* Kích thước tiêu đề */
   font-weight: 600; /* Độ đậm */
   color: #2c5530; /* Màu xanh */
   margin-bottom: 1rem; /* Khoảng cách dưới */
 }
 
-.feature-card p {
-  color: #666; /* Màu xám cho text */
-  line-height: 1.7; /* Khoảng cách dòng */
+.price {
+  display: flex; /* Sử dụng flexbox */
+  align-items: baseline; /* Căn theo baseline */
+  justify-content: center; /* Căn giữa */
+  gap: 0.25rem; /* Khoảng cách giữa các phần tử */
+}
+
+.currency {
+  font-size: 1.2rem; /* Kích thước ký hiệu tiền tệ */
+  color: #666; /* Màu xám */
+}
+
+.amount {
+  font-size: 3rem; /* Kích thước số tiền lớn */
+  font-weight: 700; /* Độ đậm cao */
+  color: #2c5530; /* Màu xanh */
+}
+
+.period {
+  font-size: 1rem; /* Kích thước chu kỳ */
+  color: #666; /* Màu xám */
+}
+
+.pricing-features {
+  flex-grow: 1; /* Mở rộng để chiếm không gian còn lại */
+  margin-bottom: 2rem; /* Khoảng cách dưới */
+}
+
+.pricing-features ul {
+  list-style: none; /* Xóa bullet points */
+  padding: 0; /* Xóa padding */
+}
+
+.pricing-features li {
+  padding: 0.75rem 0; /* Khoảng cách trên dưới */
+  color: #666; /* Màu xám */
+  display: flex; /* Sử dụng flexbox */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  gap: 0.75rem; /* Khoảng cách giữa icon và text */
+}
+
+.pricing-features .fas {
+  color: #ffc107; /* Màu vàng cho icon check */
+  font-size: 0.9rem; /* Kích thước icon */
+}
+
+.pricing-footer {
+  margin-top: auto; /* Đẩy xuống dưới cùng */
 }
 
 /* Thiết lập cho CTA section */
@@ -397,19 +439,26 @@ body {
 
 /* Responsive design cho tablet */
 @media (max-width: 992px) {
-  .hero-content {
-    flex-direction: column; /* Sắp xếp theo chiều dọc */
-    text-align: center; /* Căn giữa text */
-    gap: 3rem; /* Giảm khoảng cách */
+  .page-title {
+    font-size: 2.5rem; /* Giảm kích thước chữ */
   }
 
-  .hero-title {
-    font-size: 3rem; /* Giảm kích thước chữ */
+  .section-title {
+    font-size: 2rem; /* Giảm kích thước tiêu đề section */
   }
 
-  .features-grid {
+  .cta-title {
+    font-size: 2rem; /* Giảm kích thước tiêu đề CTA */
+  }
+
+  .services-grid,
+  .pricing-grid {
     flex-direction: column; /* Sắp xếp theo chiều dọc */
     align-items: center; /* Căn giữa */
+  }
+
+  .pricing-card.featured {
+    transform: none; /* Xóa scale trên tablet */
   }
 }
 
@@ -424,32 +473,26 @@ body {
     display: flex; /* Hiển thị toggle button */
   }
 
-  .hero-title {
-    font-size: 2.5rem; /* Giảm kích thước chữ trên mobile */
-  }
-
-  .hero-description {
-    font-size: 1rem; /* Giảm kích thước mô tả */
+  .page-title {
+    font-size: 2rem; /* Giảm kích thước chữ trên mobile */
   }
 
   .section-title {
-    font-size: 2rem; /* Giảm kích thước tiêu đề section */
+    font-size: 1.8rem; /* Giảm kích thước tiêu đề section */
   }
 
   .cta-title {
-    font-size: 2rem; /* Giảm kích thước tiêu đề CTA */
+    font-size: 1.8rem; /* Giảm kích thước tiêu đề CTA */
   }
 
-  .hero-buttons {
-    justify-content: center; /* Căn giữa buttons */
-    flex-direction: column; /* Sắp xếp theo chiều dọc */
-    align-items: center; /* Căn giữa */
+  .service-card,
+  .pricing-card {
+    min-width: auto; /* Xóa min-width */
+    margin-bottom: 2rem; /* Thêm margin dưới */
   }
 
-  .btn {
-    width: 100%; /* Chiều rộng 100% trên mobile */
-    max-width: 300px; /* Giới hạn độ rộng tối đa */
-    justify-content: center; /* Căn giữa nội dung button */
+  .amount {
+    font-size: 2.5rem; /* Giảm kích thước số tiền trên mobile */
   }
 
   .footer-content {
@@ -464,17 +507,18 @@ body {
     padding: 0 15px; /* Giảm padding */
   }
 
-  .hero-section {
+  .page-header {
     padding: 100px 0 60px; /* Giảm padding */
   }
 
-  .features-section,
+  .services-overview,
+  .pricing-section,
   .cta-section {
     padding: 60px 0; /* Giảm padding */
   }
 
-  .feature-card {
-    min-width: auto; /* Xóa min-width */
-    margin-bottom: 2rem; /* Thêm margin dưới */
+  .service-card,
+  .pricing-card {
+    padding: 2rem 1.5rem; /* Giảm padding trong card */
   }
 }

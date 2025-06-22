@@ -1,0 +1,739 @@
+/* CSS cho trang liên hệ - contact.html */
+
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+/* Reset CSS cơ bản */
+* {
+  margin: 0; /* Xóa margin mặc định của tất cả elements */
+  padding: 0; /* Xóa padding mặc định của tất cả elements */
+  box-sizing: border-box; /* Tính toán kích thước bao gồm border và padding */
+}
+
+/* Thiết lập cơ bản cho body */
+body {
+  font-family: "Inter", sans-serif; /* Thiết lập font chữ chính cho toàn trang */
+  line-height: 1.6; /* Thiết lập khoảng cách giữa các dòng */
+  color: #333; /* Màu chữ chính */
+  background-color: #fff; /* Màu nền trắng */
+}
+
+/* Container chung cho tất cả sections */
+.container {
+  max-width: 1200px; /* Giới hạn độ rộng tối đa */
+  margin: 0 auto; /* Căn giữa container */
+  padding: 0 20px; /* Khoảng cách hai bên */
+}
+
+/* Thiết lập cho header */
+.header {
+  background-color: #fff; /* Nền trắng cho header */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Tạo bóng đổ nhẹ */
+  position: fixed; /* Cố định header ở đầu trang */
+  top: 0; /* Vị trí từ đầu trang */
+  left: 0; /* Vị trí từ bên trái */
+  right: 0; /* Vị trí từ bên phải */
+  z-index: 1000; /* Đặt layer cao để hiển thị trên các elements khác */
+}
+
+/* Thiết lập cho navbar */
+.navbar {
+  padding: 1rem 0; /* Khoảng cách trên dưới cho navbar */
+}
+
+.navbar .container {
+  display: flex; /* Sử dụng flexbox để sắp xếp các items */
+  justify-content: space-between; /* Phân bố đều các items */
+  align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+/* Thiết lập cho brand/logo */
+.navbar-brand a {
+  font-size: 1.8rem; /* Kích thước chữ lớn cho logo */
+  font-weight: 700; /* Độ đậm cao */
+  color: #2c5530; /* Màu xanh đậm */
+  text-decoration: none; /* Xóa gạch chân */
+}
+
+/* Thiết lập cho navigation menu */
+.navbar-nav {
+  display: flex; /* Sử dụng flexbox để sắp xếp menu items */
+  list-style: none; /* Xóa bullet points */
+  gap: 2rem; /* Khoảng cách giữa các menu items */
+}
+
+.nav-link {
+  color: #666; /* Màu xám cho menu links */
+  text-decoration: none; /* Xóa gạch chân */
+  font-weight: 500; /* Độ đậm trung bình */
+  transition: color 0.3s ease; /* Hiệu ứng chuyển màu mượt */
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #2c5530; /* Màu xanh khi hover hoặc active */
+}
+
+/* Thiết lập cho navbar buttons */
+.navbar-buttons {
+  display: flex; /* Sử dụng flexbox để sắp xếp buttons */
+  gap: 1rem; /* Khoảng cách giữa các buttons */
+  align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+/* Thiết lập cho mobile menu toggle */
+.mobile-menu-toggle {
+  display: none; /* Ẩn trên desktop */
+  flex-direction: column; /* Sắp xếp theo chiều dọc */
+  cursor: pointer; /* Con trỏ chuột dạng pointer */
+  gap: 4px; /* Khoảng cách giữa các thanh */
+}
+
+.mobile-menu-toggle span {
+  width: 25px; /* Chiều rộng của thanh */
+  height: 3px; /* Chiều cao của thanh */
+  background-color: #2c5530; /* Màu xanh cho thanh */
+  transition: all 0.3s ease; /* Hiệu ứng chuyển động */
+}
+
+/* Thiết lập cho buttons */
+.btn {
+  display: inline-flex; /* Hiển thị inline với flexbox */
+  align-items: center; /* Căn giữa nội dung theo chiều dọc */
+  gap: 0.5rem; /* Khoảng cách giữa icon và text */
+  padding: 12px 24px; /* Khoảng cách trong button */
+  border-radius: 25px; /* Bo góc tròn */
+  text-decoration: none; /* Xóa gạch chân */
+  font-weight: 600; /* Độ đậm */
+  font-size: 0.95rem; /* Kích thước chữ */
+  transition: all 0.3s ease; /* Hiệu ứng chuyển động */
+  border: none; /* Xóa viền mặc định */
+  cursor: pointer; /* Con trỏ chuột dạng pointer */
+  text-align: center; /* Căn giữa text */
+  justify-content: center; /* Căn giữa nội dung */
+}
+
+/* Button primary style */
+.btn-primary {
+  background: linear-gradient(45deg, #2c5530, #1a3a1e); /* Gradient xanh */
+  color: #fff; /* Màu chữ trắng */
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px); /* Di chuyển lên khi hover */
+  box-shadow: 0 10px 20px rgba(44, 85, 48, 0.3); /* Tạo bóng đổ khi hover */
+}
+
+/* Button outline style */
+.btn-outline {
+  border: 2px solid #2c5530; /* Viền xanh */
+  color: #2c5530; /* Màu chữ xanh */
+  background: transparent; /* Nền trong suốt */
+}
+
+.btn-outline:hover {
+  background-color: #2c5530; /* Nền xanh khi hover */
+  color: #fff; /* Màu chữ trắng khi hover */
+  transform: translateY(-2px); /* Di chuyển lên khi hover */
+}
+
+/* Button large size */
+.btn-large {
+  padding: 15px 30px; /* Khoảng cách trong lớn hơn */
+  font-size: 1.1rem; /* Kích thước chữ lớn hơn */
+}
+
+/* Button full width */
+.btn-full {
+  width: 100%; /* Chiều rộng 100% */
+}
+
+/* Thiết lập cho page header */
+.page-header {
+  background: linear-gradient(135deg, #2c5530 0%, #1a3a1e 100%); /* Gradient xanh đậm */
+  color: #fff; /* Màu chữ trắng */
+  padding: 120px 0 80px; /* Khoảng cách trên dưới, tính cả navbar */
+}
+
+.page-header-content {
+  text-align: center; /* Căn giữa text */
+  max-width: 800px; /* Giới hạn độ rộng */
+  margin: 0 auto; /* Căn giữa */
+}
+
+.page-title {
+  font-size: 3rem; /* Kích thước chữ lớn */
+  font-weight: 700; /* Độ đậm cao */
+  margin-bottom: 1rem; /* Khoảng cách dưới */
+}
+
+.page-subtitle {
+  font-size: 1.2rem; /* Kích thước chữ vừa */
+  opacity: 0.9; /* Độ trong suốt nhẹ */
+  line-height: 1.7; /* Khoảng cách dòng */
+}
+
+/* Thiết lập cho contact content */
+.contact-content {
+  padding: 80px 0; /* Khoảng cách trên dưới */
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); /* Gradient nền nhẹ */
+}
+
+.contact-wrapper {
+  display: flex; /* Sử dụng flexbox để sắp xếp form và info */
+  gap: 3rem; /* Khoảng cách giữa form và info */
+  align-items: flex-start; /* Căn trên cùng */
+}
+
+/* Thiết lập cho contact form section */
+.contact-form-section {
+  flex: 2; /* Chiếm 2 phần không gian */
+}
+
+.contact-form {
+  background: #fff; /* Nền trắng */
+  padding: 3rem; /* Khoảng cách trong lớn hơn */
+  border-radius: 20px; /* Bo góc lớn hơn */
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1); /* Bóng đổ mạnh hơn */
+  border: 1px solid #f0f0f0; /* Viền mỏng */
+  position: relative; /* Định vị tương đối */
+  overflow: hidden; /* Ẩn phần tràn */
+}
+
+/* Thêm hiệu ứng gradient nhẹ cho form */
+.contact-form::before {
+  content: ""; /* Tạo pseudo element */
+  position: absolute; /* Định vị tuyệt đối */
+  top: 0; /* Vị trí trên */
+  left: 0; /* Vị trí trái */
+  right: 0; /* Vị trí phải */
+  height: 4px; /* Chiều cao thanh gradient */
+  background: linear-gradient(45deg, #ffc107, #ff8c00); /* Gradient vàng cam */
+}
+
+.form-title {
+  font-size: 2.2rem; /* Kích thước tiêu đề lớn hơn */
+  font-weight: 700; /* Độ đậm cao hơn */
+  color: #2c5530; /* Màu xanh */
+  margin-bottom: 1rem; /* Khoảng cách dưới */
+  position: relative; /* Định vị tương đối */
+}
+
+/* Thêm icon cho form title */
+.form-title::before {
+  content: "✉"; /* Icon envelope */
+  font-size: 1.5rem; /* Kích thước icon */
+  margin-right: 0.5rem; /* Khoảng cách bên phải */
+  color: #ffc107; /* Màu vàng cho icon */
+}
+
+.form-subtitle {
+  color: #666; /* Màu xám */
+  margin-bottom: 2.5rem; /* Khoảng cách dưới lớn hơn */
+  line-height: 1.7; /* Khoảng cách dòng */
+  font-size: 1.05rem; /* Kích thước chữ hơi lớn */
+}
+
+/* Thiết lập cho form */
+.form {
+  display: flex; /* Sử dụng flexbox */
+  flex-direction: column; /* Hướng dọc */
+  gap: 1.8rem; /* Khoảng cách giữa các form groups lớn hơn */
+}
+
+.form-row {
+  display: flex; /* Sử dụng flexbox để sắp xếp 2 cột */
+  gap: 1.5rem; /* Khoảng cách giữa các columns */
+}
+
+.form-group {
+  flex: 1; /* Chiếm không gian đều nhau */
+  display: flex; /* Sử dụng flexbox */
+  flex-direction: column; /* Hướng dọc */
+}
+
+.form-label {
+  font-weight: 600; /* Độ đậm cao hơn */
+  color: #2c5530; /* Màu xanh thay vì đen */
+  margin-bottom: 0.7rem; /* Khoảng cách dưới lớn hơn */
+  font-size: 0.95rem; /* Kích thước chữ hơi nhỏ */
+}
+
+.form-control {
+  border: 2px solid #e9ecef; /* Viền xám nhạt */
+  border-radius: 12px; /* Bo góc lớn hơn */
+  padding: 15px 18px; /* Khoảng cách trong lớn hơn */
+  font-size: 1rem; /* Kích thước chữ */
+  font-family: inherit; /* Kế thừa font từ parent */
+  transition: all 0.3s ease; /* Hiệu ứng chuyển động */
+  background-color: #fff; /* Nền trắng */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Bóng đổ nhẹ */
+}
+
+.form-control:focus {
+  outline: none; /* Xóa outline mặc định */
+  border-color: #ffc107; /* Viền vàng khi focus */
+  box-shadow: 0 0 0 0.3rem rgba(255, 193, 7, 0.15); /* Bóng đổ vàng khi focus */
+  transform: translateY(-2px); /* Di chuyển lên nhẹ khi focus */
+}
+
+.form-control:hover {
+  border-color: #dee2e6; /* Viền đậm hơn khi hover */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Bóng đổ mạnh hơn khi hover */
+}
+
+textarea.form-control {
+  resize: vertical; /* Chỉ cho phép resize theo chiều dọc */
+  min-height: 140px; /* Chiều cao tối thiểu lớn hơn */
+  font-family: inherit; /* Kế thừa font */
+}
+
+/* Thiết lập cho contact info section */
+.contact-info-section {
+  flex: 1; /* Chiếm 1 phần không gian */
+}
+
+.contact-info {
+  background: #fff; /* Nền trắng thay vì xám */
+  padding: 3rem; /* Khoảng cách trong lớn hơn */
+  border-radius: 20px; /* Bo góc lớn hơn */
+  height: fit-content; /* Chiều cao vừa với nội dung */
+  position: sticky; /* Cố định khi scroll */
+  top: 100px; /* Vị trí từ trên */
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1); /* Bóng đổ mạnh hơn */
+  border: 1px solid #f0f0f0; /* Viền mỏng */
+  position: relative; /* Định vị tương đối */
+  overflow: hidden; /* Ẩn phần tràn */
+}
+
+/* Thêm hiệu ứng gradient cho contact info */
+.contact-info::before {
+  content: ""; /* Tạo pseudo element */
+  position: absolute; /* Định vị tuyệt đối */
+  top: 0; /* Vị trí trên */
+  left: 0; /* Vị trí trái */
+  right: 0; /* Vị trí phải */
+  height: 4px; /* Chiều cao thanh gradient */
+  background: linear-gradient(45deg, #2c5530, #1a3a1e); /* Gradient xanh */
+}
+
+.info-title {
+  font-size: 2rem; /* Kích thước tiêu đề lớn hơn */
+  font-weight: 700; /* Độ đậm cao hơn */
+  color: #2c5530; /* Màu xanh */
+  margin-bottom: 2.5rem; /* Khoảng cách dưới lớn hơn */
+  position: relative; /* Định vị tương đối */
+}
+
+/* Thêm icon cho info title */
+.info-title::before {
+  content: "📞"; /* Icon phone */
+  font-size: 1.3rem; /* Kích thước icon */
+  margin-right: 0.5rem; /* Khoảng cách bên phải */
+}
+
+.info-item {
+  display: flex; /* Sử dụng flexbox */
+  align-items: flex-start; /* Căn trên cùng */
+  margin-bottom: 2.5rem; /* Khoảng cách dưới lớn hơn */
+  padding: 1rem; /* Thêm padding */
+  border-radius: 12px; /* Bo góc */
+  transition: all 0.3s ease; /* Hiệu ứng chuyển động */
+}
+
+.info-item:hover {
+  background-color: #f8f9fa; /* Nền xám nhạt khi hover */
+  transform: translateX(5px); /* Di chuyển sang phải nhẹ khi hover */
+}
+
+.info-icon {
+  width: 55px; /* Chiều rộng lớn hơn */
+  height: 55px; /* Chiều cao lớn hơn */
+  background: linear-gradient(45deg, #ffc107, #ff8c00); /* Gradient nền */
+  border-radius: 50%; /* Tạo hình tròn */
+  display: flex; /* Sử dụng flexbox */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  margin-right: 1.2rem; /* Khoảng cách bên phải lớn hơn */
+  flex-shrink: 0; /* Không co lại */
+  box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3); /* Bóng đổ vàng */
+}
+
+.info-icon i {
+  color: #fff; /* Màu trắng cho icon */
+  font-size: 1.3rem; /* Kích thước icon lớn hơn */
+}
+
+.info-content h5 {
+  font-size: 1.3rem; /* Kích thước tiêu đề lớn hơn */
+  font-weight: 600; /* Độ đậm */
+  color: #2c5530; /* Màu xanh */
+  margin-bottom: 0.5rem; /* Khoảng cách dưới */
+}
+
+.info-content p {
+  color: #666; /* Màu xám */
+  margin: 0; /* Xóa margin */
+  line-height: 1.6; /* Khoảng cách dòng */
+  font-size: 0.95rem; /* Kích thước chữ hơi nhỏ */
+}
+
+/* Thiết lập cho social media */
+.social-media {
+  margin-top: 2.5rem; /* Khoảng cách trên lớn hơn */
+  padding-top: 2.5rem; /* Khoảng cách trong trên lớn hơn */
+  border-top: 2px solid #e9ecef; /* Viền trên dày hơn */
+}
+
+.social-media h5 {
+  font-size: 1.3rem; /* Kích thước tiêu đề lớn hơn */
+  font-weight: 600; /* Độ đậm */
+  color: #2c5530; /* Màu xanh */
+  margin-bottom: 1.5rem; /* Khoảng cách dưới lớn hơn */
+}
+
+.social-links {
+  display: flex; /* Sử dụng flexbox */
+  gap: 1.2rem; /* Khoảng cách giữa các link lớn hơn */
+  justify-content: center; /* Căn giữa */
+}
+
+.social-link {
+  width: 50px; /* Chiều rộng lớn hơn */
+  height: 50px; /* Chiều cao lớn hơn */
+  background: linear-gradient(45deg, #2c5530, #1a3a1e); /* Gradient xanh */
+  border-radius: 50%; /* Tạo hình tròn */
+  display: flex; /* Sử dụng flexbox */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  color: #fff; /* Màu trắng cho icon */
+  text-decoration: none; /* Xóa gạch chân */
+  transition: all 0.3s ease; /* Hiệu ứng chuyển động */
+  box-shadow: 0 4px 12px rgba(44, 85, 48, 0.2); /* Bóng đổ xanh */
+}
+
+.social-link:hover {
+  transform: translateY(-5px) scale(1.1); /* Di chuyển lên và phóng to khi hover */
+  box-shadow: 0 8px 20px rgba(44, 85, 48, 0.4); /* Tăng bóng đổ khi hover */
+  color: #fff; /* Giữ màu trắng khi hover */
+}
+
+/* Thiết lập cho map section */
+.map-section {
+  background-color: #fff; /* Nền trắng thay vì xám */
+  padding: 80px 0; /* Khoảng cách trên dưới */
+}
+
+.map-title {
+  text-align: center; /* Căn giữa text */
+  font-size: 2.2rem; /* Kích thước tiêu đề lớn hơn */
+  font-weight: 700; /* Độ đậm cao hơn */
+  color: #2c5530; /* Màu xanh */
+  margin-bottom: 3rem; /* Khoảng cách dưới lớn hơn */
+}
+
+.map-container {
+  border-radius: 20px; /* Bo góc lớn hơn */
+  overflow: hidden; /* Ẩn phần tràn ra ngoài */
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1); /* Bóng đổ mạnh hơn */
+}
+
+.map-placeholder {
+  background: linear-gradient(135deg, #e9ecef 0%, #f8f9fa 100%); /* Gradient nền */
+  height: 450px; /* Chiều cao lớn hơn */
+  display: flex; /* Sử dụng flexbox */
+  flex-direction: column; /* Hướng dọc */
+  align-items: center; /* Căn giữa theo chiều ngang */
+  justify-content: center; /* Căn giữa theo chiều dọc */
+  text-align: center; /* Căn giữa text */
+  color: #666; /* Màu xám */
+  position: relative; /* Định vị tương đối */
+}
+
+.map-placeholder i {
+  font-size: 4rem; /* Kích thước icon lớn hơn */
+  margin-bottom: 1.5rem; /* Khoảng cách dưới lớn hơn */
+  color: #2c5530; /* Màu xanh cho icon */
+  animation: pulse 2s infinite; /* Hiệu ứng nhấp nháy */
+}
+
+/* Hiệu ứng pulse cho map icon */
+@keyframes pulse {
+  0% {
+    transform: scale(1); /* Kích thước ban đầu */
+  }
+  50% {
+    transform: scale(1.1); /* Phóng to */
+  }
+  100% {
+    transform: scale(1); /* Trở về kích thước ban đầu */
+  }
+}
+
+.map-placeholder p {
+  font-size: 1.2rem; /* Kích thước chữ lớn hơn */
+  margin-bottom: 0.8rem; /* Khoảng cách dưới */
+  font-weight: 500; /* Độ đậm trung bình */
+}
+
+.map-placeholder small {
+  color: #999; /* Màu xám nhạt */
+  font-size: 1rem; /* Kích thước chữ */
+}
+
+/* Thiết lập cho FAQ section */
+.faq-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); /* Gradient nền nhẹ */
+  padding: 80px 0; /* Khoảng cách trên dưới */
+}
+
+.section-header {
+  text-align: center; /* Căn giữa text */
+  margin-bottom: 4rem; /* Khoảng cách dưới */
+}
+
+.section-title {
+  font-size: 2.5rem; /* Kích thước chữ lớn */
+  font-weight: 700; /* Độ đậm cao */
+  color: #2c5530; /* Màu xanh đậm */
+  margin-bottom: 1rem; /* Khoảng cách dưới */
+}
+
+.section-subtitle {
+  font-size: 1.1rem; /* Kích thước chữ vừa */
+  color: #666; /* Màu xám */
+  max-width: 600px; /* Giới hạn độ rộng */
+  margin: 0 auto; /* Căn giữa */
+}
+
+.faq-wrapper {
+  max-width: 800px; /* Giới hạn độ rộng */
+  margin: 0 auto; /* Căn giữa */
+}
+
+.faq-list {
+  display: flex; /* Sử dụng flexbox */
+  flex-direction: column; /* Hướng dọc */
+  gap: 1.5rem; /* Khoảng cách giữa các FAQ items lớn hơn */
+}
+
+.faq-item {
+  border: 1px solid #e9ecef; /* Viền xám nhạt */
+  border-radius: 15px; /* Bo góc lớn hơn */
+  overflow: hidden; /* Ẩn phần tràn ra ngoài */
+  background: #fff; /* Nền trắng */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Bóng đổ nhẹ */
+  transition: all 0.3s ease; /* Hiệu ứng chuyển động */
+}
+
+.faq-item:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Tăng bóng đổ khi hover */
+  transform: translateY(-2px); /* Di chuyển lên nhẹ khi hover */
+}
+
+.faq-question {
+  background-color: #f8f9fa; /* Nền xám nhạt */
+  padding: 1.5rem 2rem; /* Khoảng cách trong lớn hơn */
+  cursor: pointer; /* Con trỏ chuột dạng pointer */
+  display: flex; /* Sử dụng flexbox */
+  justify-content: space-between; /* Phân bố đều */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  transition: all 0.3s ease; /* Hiệu ứng chuyển màu */
+}
+
+.faq-question:hover {
+  background-color: #e9ecef; /* Màu nền đậm hơn khi hover */
+}
+
+.faq-question h4 {
+  font-size: 1.15rem; /* Kích thước tiêu đề lớn hơn */
+  font-weight: 600; /* Độ đậm cao hơn */
+  color: #2c5530; /* Màu xanh */
+  margin: 0; /* Xóa margin */
+}
+
+.faq-question i {
+  color: #2c5530; /* Màu xanh cho icon */
+  transition: transform 0.3s ease; /* Hiệu ứng xoay */
+  font-size: 1.2rem; /* Kích thước icon lớn hơn */
+}
+
+.faq-answer {
+  padding: 2rem; /* Khoảng cách trong lớn hơn */
+  background-color: #fff; /* Nền trắng */
+  display: none; /* Ẩn mặc định */
+  border-top: 1px solid #f0f0f0; /* Viền trên nhẹ */
+}
+
+.faq-answer p {
+  color: #666; /* Màu xám */
+  line-height: 1.7; /* Khoảng cách dòng */
+  margin: 0; /* Xóa margin */
+  font-size: 1.05rem; /* Kích thước chữ hơi lớn */
+}
+
+/* Hiển thị FAQ answer khi active (sẽ cần JavaScript để toggle) */
+.faq-item.active .faq-answer {
+  display: block; /* Hiển thị khi active */
+}
+
+.faq-item.active .faq-question {
+  background-color: #2c5530; /* Nền xanh khi active */
+}
+
+.faq-item.active .faq-question h4,
+.faq-item.active .faq-question i {
+  color: #fff; /* Màu trắng khi active */
+}
+
+.faq-item.active .faq-question i {
+  transform: rotate(45deg); /* Xoay icon khi active */
+}
+
+/* Thiết lập cho footer */
+.footer {
+  background-color: #f8f9fa; /* Nền xám nhạt */
+  border-top: 1px solid #e9ecef; /* Viền trên */
+  padding: 2rem 0; /* Khoảng cách trên dưới */
+}
+
+.footer-content {
+  display: flex; /* Sử dụng flexbox */
+  justify-content: space-between; /* Phân bố đều */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  flex-wrap: wrap; /* Cho phép xuống dòng */
+  gap: 1rem; /* Khoảng cách giữa các items */
+}
+
+.footer-info h5 {
+  color: #2c5530; /* Màu xanh cho tiêu đề */
+  font-weight: 600; /* Độ đậm */
+  margin-bottom: 0.5rem; /* Khoảng cách dưới */
+}
+
+.footer-info p,
+.footer-copyright p {
+  color: #666; /* Màu xám cho text */
+  margin: 0; /* Xóa margin */
+}
+
+/* Responsive design cho tablet */
+@media (max-width: 992px) {
+  .contact-wrapper {
+    flex-direction: column; /* Sắp xếp theo chiều dọc */
+    gap: 3rem; /* Khoảng cách */
+  }
+
+  .contact-info {
+    position: static; /* Xóa sticky position */
+  }
+
+  .page-title {
+    font-size: 2.5rem; /* Giảm kích thước chữ */
+  }
+
+  .section-title {
+    font-size: 2rem; /* Giảm kích thước tiêu đề section */
+  }
+
+  .form-title {
+    font-size: 2rem; /* Giảm kích thước tiêu đề form */
+  }
+
+  .info-title {
+    font-size: 1.8rem; /* Giảm kích thước tiêu đề info */
+  }
+}
+
+/* Responsive design cho mobile */
+@media (max-width: 768px) {
+  .navbar-nav,
+  .navbar-buttons {
+    display: none; /* Ẩn menu trên mobile */
+  }
+
+  .mobile-menu-toggle {
+    display: flex; /* Hiển thị toggle button */
+  }
+
+  .page-title {
+    font-size: 2rem; /* Giảm kích thước chữ trên mobile */
+  }
+
+  .section-title {
+    font-size: 1.8rem; /* Giảm kích thước tiêu đề section */
+  }
+
+  .form-row {
+    flex-direction: column; /* Sắp xếp theo chiều dọc */
+    gap: 1rem; /* Giảm khoảng cách */
+  }
+
+  .contact-form,
+  .contact-info {
+    padding: 2rem; /* Giảm padding */
+  }
+
+  .form-title {
+    font-size: 1.8rem; /* Giảm kích thước tiêu đề form */
+  }
+
+  .info-title {
+    font-size: 1.6rem; /* Giảm kích thước tiêu đề info */
+  }
+
+  .social-links {
+    justify-content: center; /* Căn giữa social links trên mobile */
+  }
+
+  .map-placeholder {
+    height: 300px; /* Giảm chiều cao map trên mobile */
+  }
+
+  .footer-content {
+    flex-direction: column; /* Sắp xếp theo chiều dọc */
+    text-align: center; /* Căn giữa text */
+  }
+
+  .faq-question {
+    padding: 1.2rem 1.5rem; /* Giảm padding cho mobile */
+  }
+
+  .faq-answer {
+    padding: 1.5rem; /* Giảm padding cho mobile */
+  }
+}
+
+/* Responsive design cho mobile nhỏ */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px; /* Giảm padding */
+  }
+
+  .page-header {
+    padding: 100px 0 60px; /* Giảm padding */
+  }
+
+  .contact-content,
+  .map-section,
+  .faq-section {
+    padding: 60px 0; /* Giảm padding */
+  }
+
+  .contact-form,
+  .contact-info {
+    padding: 1.5rem; /* Giảm padding trong card */
+  }
+
+  .form-title {
+    font-size: 1.6rem; /* Giảm kích thước tiêu đề */
+  }
+
+  .info-title {
+    font-size: 1.4rem; /* Giảm kích thước tiêu đề */
+  }
+
+  .map-title {
+    font-size: 1.8rem; /* Giảm kích thước tiêu đề map */
+  }
+}
