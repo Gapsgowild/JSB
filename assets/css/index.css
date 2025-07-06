@@ -294,7 +294,7 @@ body {
 
 /* Thiết lập cho features grid */
 .features-grid {
-  display: flex; /* Sử dụng flexbox */
+  display: flex; /* Sử dụng flexbox, bỏ đi = hàng dọc */
   gap: 2rem; /* Khoảng cách giữa các cards */
   flex-wrap: wrap; /* Cho phép xuống dòng */
   justify-content: center; /* Căn giữa */
